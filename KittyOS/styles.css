@@ -4,14 +4,15 @@
 	width: 100vw;
 	position: fixed;
 	inset: 0 0 0 0;
+	z-index: -1;
 	/* appearance */
-	background-image: url("assets/images/kitties/washington_bg.png");
-	background-color: #022F00;
+	background-image: url("assets/images/kitties/washington.png");
+	background-color: rgba(0,10,0,0.93);
 	background-blend-mode: overlay;
-	background-size: 1000px;
+	background-size: 100px;
 	/* scroll and appear animation */
 	visibility: hidden;
-	animation: appear 3s ease-in forwards, bgScroll 20s linear infinite;
+	animation: appear 3s ease-in forwards, bgScroll 50s linear infinite;
 }
 @keyframes bgScroll {
 	from {
@@ -29,4 +30,26 @@
 	to {
 		visibility: visible; 
 	}
+}
+
+
+.tab {
+	background-color: rgba(255,255,255,1.00);
+	position: relative;
+	border-radius: 10px
+}
+
+.tab::after {
+	content: "";
+	display: inline-block;
+	width: 30px;
+	height: 20px;
+	background-color: #ff5f56;
+	box-shadow: 29px 0 0 #ffbd2e;
+}
+#termStart {
+	width: 750px;
+	height: 400px;
+	left: 50px;
+	top: 100px;
 }
