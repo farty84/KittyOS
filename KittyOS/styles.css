@@ -1,0 +1,32 @@
+#background {
+	/* div fit */
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	inset: 0 0 0 0;
+	/* appearance */
+	background-image: url("assets/images/kitties/washington_bg.png");
+	background-color: #022F00;
+	background-blend-mode: overlay;
+	background-size: 1000px;
+	/* scroll and appear animation */
+	visibility: hidden;
+	animation: appear 3s ease-in forwards, bgScroll 20s linear infinite;
+}
+@keyframes bgScroll {
+	from {
+		background-position: bottom left;
+	}
+	to {
+		background-position: top right;
+	}
+}
+
+@keyframes appear {
+	from {
+		visibility: hidden;
+	}
+	to {
+		visibility: visible; 
+	}
+}
