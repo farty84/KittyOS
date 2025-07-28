@@ -34,22 +34,29 @@
 
 
 .tab {
-	background-color: rgba(255,255,255,1.00);
+	background-color: rgba(103,117,95,1.00);
 	position: relative;
-	border-radius: 10px
+	border: 2px solid rgba(103,117,95,1.00);
 }
 
-.tab::after {
-	content: "";
-	display: inline-block;
-	width: 30px;
-	height: 20px;
-	background-color: #ff5f56;
-	box-shadow: 29px 0 0 #ffbd2e;
-}
 #termStart {
 	width: 750px;
 	height: 400px;
 	left: 50px;
 	top: 100px;
+	
+	background-color: rgba(40,46,37,1.00)
+}
+
+.tab nav {
+	background-color: #353C31;
+	border: 2px solid rgba(103,117,95,1.00);
+	width: 99.6%;
+	height: 25px;
+	
+}
+
+.tab nav p {
+	color: rgba(103,117,95,1.00);
+	
 }
