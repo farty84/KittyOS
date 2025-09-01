@@ -1,8 +1,35 @@
+/* FONTS, CHARSET, STYLISATION */
+
+@font-face{
+	font-family: "IBM BIOS 2x";
+	src: url("assets/fonts/Web437_IBM_BIOS-2x.woff") format('woff');
+}
+
+@font-face{
+	font-family: "IBM BIOS 2y";
+	src: url("assets/fonts/WebPlus_IBM_BIOS-2y.woff") format('woff');
+}
+
+::selection {
+	background: #c05122; /* WebKit/Blink browsers */
+	color: black;
+}
+
+::-moz-selection {
+	background: #c05122; /* Mozilla Browsers */
+	color: black;
+}
+
+
 /* BACKGROUND */
+body {
+	background-color: black;
+}
+
 #background {
 	/* div fit */
-	height: 100vh;
-	width: 100vw;
+	height: 200vh;
+	width: 200vw;
 	position: fixed;
 	inset: 0 0 0 0;
 	z-index: -1;
@@ -13,46 +40,107 @@
 	background-size: 100px;
 	/* scroll and appear animation */
 	visibility: hidden;
-	animation: appear 3s ease-in forwards, bgScroll 50s linear infinite;
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
+	animation: bgScroll 50s linear infinite;
 }
 
 
 
 /* ANIMATIONS */
 @keyframes bgScroll {
-	from {
-		background-position: bottom left;
-	}
-	to {
-		background-position: top right;
-	}
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-50%, -50%);
+  }
 }
 
-@keyframes appear {
-	from {
-		visibility: hidden;
-	}
-	to {
-		visibility: visible; 
-	}
+
+/* BUTT */
+#butt {
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
 }
 
+#butt button {
+	width: 80px;
+	background-color: rgba(0,0,0,0);
+	overflow-wrap: break-word;
+	margin: 15px;
+	top: 0px;
+	font-family: "IBM BIOS 2y";
+	color: rgba(103,117,95,1.00);
+	float: left;
+	
+}
+
+#butt button:hover {
+	cursor: pointer;
+	background-color: rgba(0,0,0,0.5);
+}
+
+
+/* INDIVIDUAL ELEMENT PROPERTIES */
+#Heading {
+	background-color: rgba(40,46,37,1.00);
+	padding-top: 1px;
+	padding-left: 20px;
+	width: 100%;
+	height: 45px;
+	font-family: "IBM BIOS 2x";
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
+}
 
 
 /* BASIC TAB PROPERTIES */
-.tab {
+.draggable {
 	background-color: rgba(103,117,95,1.00);
 	position: absolute;
-	border: 4px solid rgba(103,117,95,1.00);
+	border: 2px solid rgba(103,117,95,1.00);
 }
 
-#header {
+.draggableHeader {
+	position: relative;
 	background-color: #353C31;
 	border-bottom: 4px solid rgba(103,117,95,1.00);
 	width: 100%;
 	height: 25px;
 	color: rgba(103,117,95,1.00);
-	cursor: move;
+	cursor: grab;
+	padding-top: 0px;
+	font-family: "IBM BIOS 2x";
+	font-size: 10px; 
+}
+
+.draggableHeader button {
+	border: 4px solid rgba(103,117,95,1.00);
+	color: rgba(103,117,95,1.00);
+	font-family: "IBM BIOS 2x";
+	background-color: rgba(0,0,0,0);
+	cursor: pointer;
+	float: right;
+}
+
+.draggableHeader button:hover {
+	background-color: rgba(103,117,95,1.00);
+	color: rgba(40,46,37,1.00);
+}
+
+.ascii-art {
+	white-space: pre;
+	color: rgba(103,117,95,1.00);
+	font-family: "IBM BIOS 2y";
+	text-align: left;
+	/* TRANSITION */
+	visibility: hidden;
+	opacity: 0;
+	visibility: inherit;
+	transition: opacity 1s ease-in-out;
 }
 
 
@@ -61,5 +149,70 @@
 #mydiv {
 	width: 750px;
 	height: 400px;
-	background-color: rgba(40,46,37,1.00)
+	background-color: rgba(40,46,37,1.00);
+	font-family: "IBM BIOS 2y";
+	position: absolute;
+}
+
+#mydiv p {
+	color: rgba(103,117,95,1.00);
+	list-style-type: none;
+}
+
+#washington {
+	height: 515px;
+	width: 445px;
+	visibility: hidden;
+}
+#washington img {
+	
+	position:relative;
+	top: 20px;
+}
+
+
+#info {
+	height: 300px;
+	width: 445px;
+	color: rgba(40,46,37,1.00);
+	font-family: "IBM BIOS 2y";
+	visibility: hidden;
+}
+.infoMain {
+	overflow: scroll;
+	height:260px;
+	scrollbar-color: rgba(40,46,37,1.00);
+}
+
+
+
+#kitties {
+	width: 500px;
+	height: 300px;
+	visibility: hidden;
+}
+#kittyTxt {
+	width: 80px;
+	background-color: rgba(40,46,37,1.00);
+	overflow-wrap: break-word;
+	margin: 15px;
+	top: 0px;
+	font-family: "IBM BIOS 2y";
+	color: rgba(103,117,95,1.00);
+	float: left;
+}
+#kittyTxt:hover {
+	background-color: rgba(0,0,0,1.00);
+	cursor:pointer;
+}
+
+#kittyTxtTab {
+	height: 300px;
+	width: 445px;
+	color: rgba(40,46,37,1.00);
+	font-family: "IBM BIOS 2y";
+	visibility: hidden;
+}
+html {
+	color: rgba(103,117,95,1.00);
 }
